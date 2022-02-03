@@ -1,40 +1,44 @@
 public class StackOfIntegers {
     private int[] elements;
-    private int size;
-    private int top;
-    private int popValue;
+    private int size; //top index
 
     public StackOfIntegers() {
         elements = new int[16];
-        top = -1;
+        size = -1;
     }
 
     public StackOfIntegers(int capacity) {
         elements = new int[capacity];
-        top = -1;
+        size = -1;
     }
 
-    //public boolean empty() {}
+    public boolean empty() {
+        return size == 0 ? true : false;
+    }
 
     //public int peek() {}
 
     public void push(int value) {
-        if(top == -1) {
-            top++;
+        if(size == -1) {
+            size++;
+            elements[size] = value;
+            //System.out.print(elements[size] + " ");
+            size++;
+        } else {
+            elements[size] = value;
+            //System.out.print(elements[size] + " ");
+            size++;
         }
-        elements[top] = value;
-        //System.out.println(elements[top]);
-        top++;
     }
 
     public int pop() {
-        popValue = elements[top];
-        elements[top] = 0;
-        top--;
+        int popValue = elements[size - 1];
+        elements[size] = 0;
+        size--;
         return popValue;
     }
 
     public int getSize() {
-        return top + 1;
+        return size + 1;
     }
 }
