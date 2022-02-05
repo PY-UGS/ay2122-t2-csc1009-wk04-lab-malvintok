@@ -39,6 +39,6 @@ public class StackOfIntegers {
     }
 
     public int getSize() {
-        return size + 1;
+        return size;
     }
 }
