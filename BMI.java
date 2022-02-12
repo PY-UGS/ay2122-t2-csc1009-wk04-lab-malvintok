@@ -5,6 +5,9 @@ public class BMI {
     private double height;
     private double bmi;
 
+    public BMI() {
+    }
+
     public double CalculateBmi() {
         height = height * 0.0254;
         weight = weight * 0.45359237;
