@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class BMI {
+    static final double POUNDTOKG = 0.45359237;
+    static final double INCHTOCM = 0.0254;
     private double weight;
     private double height;
     private double bmi;
@@ -9,8 +11,6 @@ public class BMI {
     }
 
     public double CalculateBmi() {
-        height = height * 0.0254;
-        weight = weight * 0.45359237;
         bmi = weight / (height * height);
         return bmi;
     }
@@ -30,7 +30,7 @@ public class BMI {
     }
 
     public void setHeight(double height) {
-        this.height = height;
+        this.height = height * INCHTOCM;
     }
 
     public double getWeight() {
@@ -38,7 +38,7 @@ public class BMI {
     }
 
     public void setWeight(double weight) {
-        this.weight = weight;
+        this.weight = weight * POUNDTOKG;
     }
 
     public static void main(String[] args) {
